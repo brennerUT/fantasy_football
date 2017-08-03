@@ -22,7 +22,6 @@ def ridge_pipeline(df,df_2017):
         return df_2017.loc[:,['player','position','my_proj']].sort_values('my_proj',ascending=False)
 df_2017=pd.read_csv('2017_projections.csv')
 masterDf=pd.read_csv('2016_actual_and_proj.csv')
-
 d={}
 for pos in ['DST','QB','RB','WR','TE']:
     result=ridge_pipeline(masterDf.loc[masterDf['position']==pos],df_2017.loc[df_2017['position']==pos])
